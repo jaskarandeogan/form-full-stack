@@ -7,7 +7,6 @@ const postUser = (req, res) => {
     age: req.body.age,
     status: req.body.status,
   });
-  console.log(newUser);
 
   newUser
     .save()
