@@ -15,7 +15,7 @@ const Show = (props) => {
       .catch((error) => console.log(error));
   }
 
-  useEffect(getApiData, [data]);
+  useEffect(getApiData, [props.updateData]);
 
   function deleteUser(id) {
     console.log(id);
@@ -23,6 +23,7 @@ const Show = (props) => {
       .delete(`http://localhost:8080/api/users/delete/${id}`)
       .then((result) => {
         alert("Deleted");
+        props.setUpdate(result);
         console.log(result);
       })
       .catch((err) => console.log(err));

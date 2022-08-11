@@ -30,12 +30,14 @@ const Form = (props) => {
   };
 
   function handleSubmit(e) {
+
     // e.preventDefault();
     console.log(newUser);
     axios
       .post("http://localhost:8080/api/users", newUser)
       .then((result) => {
         alert("Submitted");
+        props.setUpdate(result);
         console.log(result);
       })
       .catch((err) => console.log(err));

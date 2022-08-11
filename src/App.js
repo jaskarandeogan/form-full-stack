@@ -4,10 +4,13 @@ import Form from "./Form";
 import Show from "./Show";
 
 const App = (props) => {
+  const [updateData, setUpdate] = useState();
+
   return (
     <>
-      <Form />
-      <Show />
+      
+      <Form setUpdate = {setUpdate}/>
+      <Show setUpdate = {setUpdate} updateData={updateData}/>
     </>
   );
 };
